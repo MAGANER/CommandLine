@@ -1,10 +1,11 @@
-#include"SFML\Graphics.hpp"
-using namespace sf;
+#include"CommandLine\CommandLine.h"
 
 
 int main()
 {
 	RenderWindow window(VideoMode(720, 640), "CommandLineTest");
+	CommandLine cmdl;
+
 	while (window.isOpen())
 	{
 		//handle SFML events
@@ -17,8 +18,10 @@ int main()
 			}
 		}
 
+		cmdl.get_input();
 
 		window.clear();
+		cmdl.draw(&window);
 		window.display();
 	}
 
