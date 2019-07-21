@@ -16,6 +16,7 @@ void CommandLine::get_input()
 {
 	int first_key = Keyboard::A;
 	int last_key  = Keyboard::Num9;
+	int first_number = Keyboard::Num0;
 
 	for (int key = first_key; key < last_key; ++key)
 	{
@@ -23,7 +24,7 @@ void CommandLine::get_input()
 		if (Keyboard::isKeyPressed(pressed_key) && !key_pressed)
 		{
 			//check is it char, if it's not, than it's number
-			bool is_char = key < last_key;
+			bool is_char  = key < first_number;
 			if (is_char)
 			{
 				// why +65?
@@ -35,6 +36,13 @@ void CommandLine::get_input()
 				*/
 				int _char = key + 65;
 
+				char entered_symbol = static_cast<char>(_char);
+				entered_text += entered_symbol;
+			}
+			else
+			{
+				
+				int _char = key + 22;
 				char entered_symbol = static_cast<char>(_char);
 				entered_text += entered_symbol;
 			}
