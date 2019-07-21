@@ -25,6 +25,7 @@ int main()
 			if (is_working)
 			{
 				cmdl.set_working_state(false);
+				cmdl.clear();
 			}
 			else
 			{
