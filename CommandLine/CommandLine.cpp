@@ -109,3 +109,8 @@ bool CommandLine::is_working()
 {
 	return working;
 }
+void CommandLine::clear()
+{
+	entered_command->setString("");
+	entered_text.clear();
+}

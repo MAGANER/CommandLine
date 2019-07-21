@@ -31,6 +31,8 @@ public:
 
 	void set_working_state(bool flag);
 	bool is_working();
+
+	void clear();
 private:
 	bool no_pressing();
 };
